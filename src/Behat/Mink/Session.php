@@ -44,6 +44,12 @@ class Session
         $this->selectorsHandler = $selectorsHandler;
     }
 
+    function __clone()
+    {
+        $this->driver = clone $this->driver;
+    }
+
+
     /**
      * Checks whether session (driver) was started.
      *
